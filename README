@@ -1,1 +1,26 @@
-An open-source implementation of the Hessian-free optimization algorithm by James Martens
+An open-source implementation of the Hessian-free optimization algorithm, based
+on the "Deep Learning via Hessian-free Optimization" paper by James Martens
+(ICML 2010, http://www.cs.toronto.edu/~jmartens/docs/Deep_HessianFree.pdf). The
+implementation is in Theano (http://deeplearning.net/software/theano), a highly
+efficient framework for defining and optimizing expressions with
+multi-dimensional arrays, and re-uses a lot of code from the Deep Learning
+Tutorials (http://www.deeplearning.net/tutorial).
+
+The prerequisites for using the Hessian-free code are:
+
+   - a working installation of Theano in the python path
+   - a copy of the Deep Learning tutorials, which can be checked out from
+     https://github.com/lisa-lab/DeepLearningTutorials (simply add the code/
+     directory to PYTHONPATH)
+
+Once these pre-requisities are satisfied, you can run the code as follows:
+
+python run_deep_autoencoder.py -p jacobi -b 5000 -e 50 -d mnist -o hf
+
+this will load the MNIST dataset, perform 50 iterations of layer-wise RBM
+pre-training, followed by Hessian-free optimization of the global
+reconstruction cost using mini-batches of size 5000 and an (approximate) Jacobi
+pre-conditioner. Supervised learning follows.
+
+For questions and/or comments, contact Olivier Chapelle and Dumitru Erhan
+(usernames chap and dumitru on the yahoo-inc.com domain).
