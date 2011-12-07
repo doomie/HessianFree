@@ -96,14 +96,14 @@ def run_deep_autoencoder( finetune_lr = 0.1, pretraining_epochs = 50,
 
     # TODO(dumitru): put this into a config file for each dataset
     if dataset == 'mnist':
-        dataset = 'mnist.pkl.gz'
-        pretrained_model_file = 'hinton_pretrained_mnist'
+        dataset = 'data/mnist.pkl.gz'
+        pretrained_model_file = 'pretrained_models/mnist_pretrained_model'
         n_ins = 28*28
         n_outs = 10
         hidden_layers_sizes = [1000, 500, 250, 30]
     elif dataset == 'curves':
-        dataset = 'curves.gz'
-        pretrained_model_file = 'hinton_pretrained_model'
+        dataset = 'data/curves.gz'
+        pretrained_model_file = 'pretrained_models/curves_pretrained_model'
         n_ins = 28*28
         n_outs = 6
         hidden_layers_sizes = [400, 200, 100, 50, 25, 6]
