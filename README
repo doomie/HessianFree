@@ -12,15 +12,22 @@ The prerequisites for using the Hessian-free code are:
    - a copy of the Deep Learning tutorials, which can be checked out from
      https://github.com/lisa-lab/DeepLearningTutorials (simply add the code/
      directory to PYTHONPATH)
+   - a one-time execution of the download.sh script (sh download.sh)
 
 Once these pre-requisities are satisfied, you can run the code as follows:
 
-python run_deep_autoencoder.py -p jacobi -b 5000 -e 50 -d mnist -o hf
+python run_autoencoder.py -p jacobi -b 500 -e 50 -d mnist -o hf
 
 this will load the MNIST dataset, perform 50 iterations of layer-wise RBM
 pre-training, followed by Hessian-free optimization of the global
 reconstruction cost using mini-batches of size 5000 and an (approximate) Jacobi
 pre-conditioner. Supervised learning follows.
+
+The code is companion to the following paper:
+
+Olivier Chapelle and Dumitru Erhan. Improved preconditioner for hessian free
+optimization. In NIPS Workshop on Deep Learning and Unsupervised Feature
+Learning, 2011. http://olivier.chapelle.cc/pub/precond.pdf
 
 For questions and/or comments, contact Olivier Chapelle and Dumitru Erhan
 (usernames chap and dumitru on the yahoo-inc.com domain).
